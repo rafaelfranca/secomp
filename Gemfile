@@ -21,6 +21,6 @@ gem 'mysql'
 
 # Bundle gems for certain environments:
 # gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end
+group :test do
+  gem 'rspec-rails', '2.0.0.beta.8'
+end
