@@ -23,4 +23,9 @@ gem 'mysql'
 # gem 'rspec', :group => :test
 group :test do
   gem 'rspec-rails', '2.0.0.beta.8'
+   gem 'capybara'
+   gem 'database_cleaner'
+   gem 'cucumber-rails'
+   gem 'spork'
+   gem 'launchy'
 end
