@@ -10,6 +10,10 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new article page/
+      new_article_path
+    when /^no artigo "^([^\"]*)"/
+      article_path(Article.find_by_slug($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
