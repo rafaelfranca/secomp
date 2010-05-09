@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe "articles/index.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "deveria conter o link para adicionar um novo" do
+    render
+    response.should have_selector("a", :href => new_article_path)
+  end
 end
