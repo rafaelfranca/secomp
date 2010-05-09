@@ -15,4 +15,10 @@ describe Article do
     article = Factory.build(:article, :body => nil)
     article.should_not be_valid
   end
+
+  it "deveria ter um titulo" do
+    article = Factory.create(:article)
+    other_article = Factory.build(:article)
+    other_article.should_not be_valid
+  end
 end
