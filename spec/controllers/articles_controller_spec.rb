@@ -8,7 +8,7 @@ describe ArticlesController do
     end
 
     it "deveria setar @articles" do
-      get 'index'
+      act!
       assigns['articles'].should == @articles
     end
 
@@ -32,4 +32,10 @@ describe ArticlesController do
     end
   end
 
+  describe "GET 'new'" do
+    it "deveria setar @article" do
+      get 'new'
+      assigns['article'].should be_new_record
+    end
+  end
 end
