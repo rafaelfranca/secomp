@@ -21,7 +21,7 @@ development:
   database: secomp_development
   pool: 5
   username: root
-  password:
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -34,7 +34,7 @@ test: &test
   database: secomp_test
   pool: 5
   username: root
-  password:
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -44,7 +44,7 @@ production:
   database: secomp_production
   pool: 5
   username: root
-  password: 
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 cucumber:
