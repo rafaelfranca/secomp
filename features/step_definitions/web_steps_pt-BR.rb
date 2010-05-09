@@ -63,7 +63,7 @@ end
 Quando /^(?:|eu )preencho com(?: em "([^\"]*)")?:$/ do |selector, fields|
   with_scope(selector) do
     fields.rows_hash.each do |name, value|
-      Quando %{eu preenchp o campo "#{name}" com "#{value}"}
+      Quando %{eu preencho o campo "#{name}" com "#{value}"}
     end
   end
 end
