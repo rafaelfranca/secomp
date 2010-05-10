@@ -11,7 +11,7 @@ Funcionalidade: Gerenciar artigos
     E eu preencho com:
       | Título | Livrem-se dos cowboys                                 |
       | Texto  | Livrem-se dos cowboys, desenvolva software com testes |
-    E eu clico "Criar"
+    E eu pressiono "Criar"
     Entao eu deveria estar no artigo "livrem-se-dos-cowboys"
     E eu deveria ver "Livrem-se dos cowboys" em "title"
     E eu deveria ver "Livrem-se dos cowboys, desenvolva software com testes" em "article"

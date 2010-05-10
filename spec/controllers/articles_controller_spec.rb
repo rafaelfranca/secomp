@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spec_helper'
 
 describe ArticlesController do
@@ -36,6 +37,50 @@ describe ArticlesController do
     it "deveria setar @article" do
       get 'new'
       assigns['article'].should be_new_record
+    end
+  end
+  
+  describe "POST 'create'" do
+    before do
+      @article = mock_model(Article, :save => nil)
+      Article.stub(:new).and_return(@article)
+    end
+
+    it "deveria criar um novo artigo" do
+      Article.should_receive(:new).with("title" => "Titulo", "body" => "Corpo").and_return(@article)
+      post :create, :article => { "title" => "Titulo", "body" => "Corpo" }
+    end
+
+    it "deveria salvar o artigo" do
+      @article.should_receive(:save)
+      post :create
+    end
+
+    context "quando o artigo é criado com sucesso" do
+      before (:each) do
+        @article.stub(:save).and_return(true)
+      end
+
+      it "deveria setar o flash[:notice]" do
+        post :create
+        flash[:notice].should == "Artigo criado com sucesso."
+      end
+
+      it "deveria redirecionar para a index dos artigos" do
+        post :create
+        response.should redirect_to(articles_path)
+      end
+    end
+
+    context "quando o artigo falha ao ser salvo" do
+      before(:each) do
+        @article.stub(:save).and_return(false)
+      end
+
+      it "deveria setar @article" do
+        post :create
+        assigns['article'].should == @article
+      end
     end
   end
 end
