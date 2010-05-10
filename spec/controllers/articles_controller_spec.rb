@@ -39,6 +39,17 @@ describe ArticlesController do
       assigns['article'].should be_new_record
     end
   end
+
+  describe "GET 'show'" do
+    before do
+      @article = Factory(:article)
+    end
+
+    it "deveria setar @article" do
+      get "show", :id => @article.id
+      assigns['article'].should == @article
+    end
+  end
   
   describe "POST 'create'" do
     before do
@@ -68,7 +79,7 @@ describe ArticlesController do
 
       it "deveria redirecionar para a index dos artigos" do
         post :create
-        response.should redirect_to(articles_path)
+        response.should redirect_to(article_path(@article))
       end
     end
 

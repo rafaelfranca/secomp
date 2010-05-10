@@ -13,9 +13,9 @@ Funcionalidade: Gerenciar artigos
       | Texto  | Livrem-se dos cowboys, desenvolva software com testes |
     E eu pressiono "Criar"
     Entao eu deveria estar no artigo "livrem-se-dos-cowboys"
-    E eu deveria ver "Artigo criado com sucesso." em "notice"
+    E eu deveria ver "Artigo criado com sucesso." em "div#notice"
     E eu deveria ver "Livrem-se dos cowboys" em "title"
-    E eu deveria ver "Livrem-se dos cowboys, desenvolva software com testes" em "article"
+    E eu deveria ver "Livrem-se dos cowboys, desenvolva software com testes" em ".article"
 
   # Rails generates Delete links that use Javascript to pop up a confirmation
   # dialog and then do a HTTP POST request (emulated DELETE request).
